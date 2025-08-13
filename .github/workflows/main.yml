@@ -1,0 +1,13 @@
+name: Test Server
+run-name: checking if the server actually runs
+on: [push]
+jobs:
+  test-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Start Server
+        run: bun run start
+      - name: Done
+        run: echo "Sweet, I'm done!"
