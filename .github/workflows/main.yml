@@ -20,3 +20,4 @@ jobs:
           kill $SERVER_PID
       - name: Done
         run: echo "Sweet, I'm done!"
+  

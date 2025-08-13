@@ -1,17 +1,1 @@
-name: Prevent Changes
-run-name: "I'm not letting you naughty peeps screw with my verification code"
-on:
-  pull_request:
-    branches: [ "main" ]
-    types: [opened, synchronize, reopened]
-jobs:
-  test-server:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Didja change anything?"
-        uses: xalvarez/prevent-file-change-action@v2
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          pattern: ".github"
-#          trustedAuthors: techpixel
-          allowNewFiles: false
+mwahah
