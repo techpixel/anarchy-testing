@@ -12,9 +12,8 @@ jobs:
         id: request
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://81cc489647d1.ngrok-free.app'
-          method: 'POST'
-          data: "${{ github.event.pull_request }}"
+          url: 'https://81cc489647d1.ngrok-free.app?author=${{ github.event.pull_request.user.login }}&pr_id=${{ github.event.pull_request.id }}'
+          method: 'GET'
       - name: Result
         run: |
           echo ${{ steps.request.outputs.response }}
