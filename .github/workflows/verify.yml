@@ -17,6 +17,7 @@ jobs:
       - name: Result
         run: |
           echo ${{ steps.request.outputs.response }}
+          echo ${{ steps.request.outputs.status }}
       - name: Status
         if: steps.request.outputs.status != '400'
         run: exit 1
