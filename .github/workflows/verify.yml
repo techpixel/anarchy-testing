@@ -1,0 +1,23 @@
+name: Verify
+run-name: checking if you submitted it
+on:
+  pull_request_target:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit Verification
+        id: request
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://81cc489647d1.ngrok-free.app'
+          method: 'POST'
+          data: ${{ github.event.pull_request }}
+      - name: Result
+        run: |
+          echo ${{ steps.request.outputs.response }}
+      - name: Status
+        if: steps.request.outputs.status != '400'
+        run: exit 1
