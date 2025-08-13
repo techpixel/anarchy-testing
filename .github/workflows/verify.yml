@@ -14,7 +14,7 @@ jobs:
         with:
           url: 'https://81cc489647d1.ngrok-free.app'
           method: 'POST'
-          data: ${{ github.event.pull_request }}
+          data: ${{ github.event.pull_request.user.login }}
       - name: Result
         run: |
           echo ${{ steps.request.outputs.response }}
