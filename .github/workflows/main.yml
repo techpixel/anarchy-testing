@@ -12,7 +12,11 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Load Files
         uses: actions/checkout@v4
-      - name: Start Server
-        run: bun run index.ts
+      - name: Check If Server Can Run
+        run: |
+          bun run index.ts &
+          SERVER_PID=$!
+          sleep 2
+          kill $SERVER_PID
       - name: Done
         run: echo "Sweet, I'm done!"
