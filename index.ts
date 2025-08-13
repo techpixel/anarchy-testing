@@ -8,6 +8,6 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-app.listen(port, () => {
+app.listaaaaen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
