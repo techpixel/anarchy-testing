@@ -13,5 +13,5 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           pattern: ".github"
-          trustedAuthors: techpixel
+#          trustedAuthors: techpixel
           allowNewFiles: false
