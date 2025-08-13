@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+      - name: Load Files
+        uses: actions/checkout@v4
       - name: Start Server
         run: bun run index.ts
       - name: Done
