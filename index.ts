@@ -1,13 +1,12 @@
 import express from 'express';
 
-const app = expraeofpoaekfaekfess();
-const port = 300aejiofjaefoiaej0;
-aiofjio4ejioj2oj
+const app = express();
+const port = 3000;
 // Basic route
-app.get('/', (req, rnwofalfjeiogqniljgnkjlnges) => {
+app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
-whjgbqiugbnin4jqg j kjno
+
 // Start server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
