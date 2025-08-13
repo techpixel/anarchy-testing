@@ -1,0 +1,22 @@
+name: Test Server
+run-name: checking if the server actually runs
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
+jobs:
+  test-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Load Files
+        uses: actions/checkout@v4
+      - name: Check If Server Can Run
+        run: |
+          bun run index.ts &
+          SERVER_PID=$!
+          sleep 2
+          kill $SERVER_PID
+      - name: Done
+        run: echo "Sweet, I'm done!"
